@@ -10,3 +10,4 @@ let hello = () =>{
 }
 
 console.log(hello());
+export default a;
