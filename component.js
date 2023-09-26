@@ -1,12 +1,12 @@
 let a = 45;
-let str = "Tanvir";
-let obj = {
+export let str = "Tanvir";
+export let obj = {
     name: "Rahat", age:27
 }
-let arr = [1,2,5,4,"nk"];
+export let arr = [1,2,5,4,"nk"];
 
-let hello = () =>{
-    console.log("hello world");
+export let hello = () =>{
+    console.log("hello world testing");
 }
 
 console.log(hello());
