@@ -34,9 +34,18 @@ class App extends Component {
   }
 
   render() {
+    const style = {
+      border: "1px solid red",
+      borderRadius: "5px",
+      backgroundColor: "green",
+      color: "white",
+
+    }
+
+
     return (
       <div className="App">
-        <h1>Book List</h1>
+        <h1 style={style}>Book List</h1>
         <button onClick={()=>this.changeBookState("Nineteen Eighty-Four")}>Change State</button>
         <Book bookName = {this.state.books[0].bookName} writer={this.state.books[0].writer} 
         inputName={this.changeWithInputState}/>
