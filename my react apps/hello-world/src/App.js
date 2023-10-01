@@ -33,9 +33,20 @@ class App extends Component {
     });
   }
 
+  deleteBookState = index => {
+    const books = [...this.state.books];
+    //const books = this.state.books.slice();
+    //const books = this.state.books.map(item =>item)
+    books.splice(index, 1);
+    this.setState({
+      books: books
+    });
+  }
+
+
+
+
   render() {
-
-
     const style = {
       border: "1px solid red",
       borderRadius: "5px",
@@ -44,11 +55,12 @@ class App extends Component {
 
     }
 
-    const books = this.state.books.map(book => {
+    const books = this.state.books.map((book, index) => {
       return (
         <Book
           bookName={book.bookName}
           writer={book.writer}
+          delete={() => this.deleteBookState(index)}
         />
       );
     });
@@ -58,8 +70,6 @@ class App extends Component {
     return (
       <div className="App">
         <h1 style={style}>Book List</h1>
-        <button onClick={() => this.changeBookState("Nineteen Eighty-Four")}>Change State</button>
-        <input type="text" onChange={this.changeWithInputState} />
         {books}
       </div>
     );
