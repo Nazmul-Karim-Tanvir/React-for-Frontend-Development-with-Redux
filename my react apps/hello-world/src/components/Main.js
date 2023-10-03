@@ -1,28 +1,15 @@
 import React, { Component } from "react";
 import Book from "./Books";
-
+import booklist from "../assets/books";
 
 class Main extends Component {
   //State
   state = {
-    books: [
-      { id: 1, bookName: "1984", writer: "George Orwell" },
-      { id: 2, bookName: "The Da Vinci Code", writer: "Dan Brown" },
-      { id: 3, bookName: "The Alchemist", writer: "Paulo Coelho" }
-    ]
+    books: booklist,
+    showBooks: true
   }
 
-  changeBookState = newBookName => {
-    // wrong: this.state.books[0].bookName ="1975"
-    this.setState({
-      books: [
-        { bookName: newBookName, writer: "George Orwell" },
-        { bookName: "The Da Vinci Code", writer: "Dan Brown" },
-        { bookName: "Metmorphosis", writer: "Franz Kafka" }
-      ],
-      showBooks: true
-    });
-  }
+
   changeWithInputState = (event, index) => {
     const book = {
       ...this.state.books[index]
