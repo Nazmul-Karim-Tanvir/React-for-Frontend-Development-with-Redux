@@ -9,7 +9,6 @@ class Main extends Component {
       books: booklist,
       showBooks: true
     }
-    console.log("MainComponent Constructor");
   }
 
 
@@ -46,27 +45,8 @@ class Main extends Component {
 
 
 
-  componentDidMount() {
-    console.log("MainComponent componentDidMount");
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log("U MainComponent shouldComponentUpdate", nextProps, nextState);
-    return true;
-  }
-  componentDidUpdate() {
-    console.log("U MainComponent componentDidUpdate");
-  }
-
-  static getDerivedStateFromProps(nextProps, nextState) {
-    console.log("MainComponent getDerivedStateFromProps", nextProps, nextState);
-  }
-  getSnapshotBeforeUpdate(){
-    console.log("U MainComponent getSnapshotBeforeUpdate");
-  }
-
   render() {
-    console.log("MainComponent render");
+   
 
     const style = {
       border: "1px solid red",
@@ -83,7 +63,6 @@ class Main extends Component {
         changeWithInputState={this.changeWithInputState} />
     }
 
-    console.log(books);
 
     return (
       <div className="App">
