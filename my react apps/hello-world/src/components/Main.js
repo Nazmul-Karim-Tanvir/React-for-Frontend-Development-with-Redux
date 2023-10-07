@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import booklist from "../assets/books";
 import BookList from "./lists/BookList";
+import NewBook from "./represent/NewBook";
 
 class Main extends Component {
   constructor(props) {
@@ -46,7 +47,7 @@ class Main extends Component {
 
 
   render() {
-   
+
 
     const style = {
       border: "1px solid red",
@@ -66,9 +67,20 @@ class Main extends Component {
 
     return (
       <div className="App">
+        <div className="nav-bar">
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="new-book">New Book</a>
+            </li>
+          </ul>
+        </div>
         <h1 style={style}>Book List</h1>
         <button onClick={this.toggleBooks}>Toggle Books</button>
         {books}
+        <NewBook />
       </div>
     );
   }
