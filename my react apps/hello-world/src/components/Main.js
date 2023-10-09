@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import booklist from "../assets/books";
 import BookList from "./lists/BookList";
 import NewBook from "./represent/NewBook";
-import { Routes,Route } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 
 class Main extends Component {
   constructor(props) {
@@ -45,8 +45,8 @@ class Main extends Component {
 
 
     const books = <BookList
-    books={this.state.books} deleteBookState={this.deleteBookState}
-    changeWithInputState={this.changeWithInputState} />
+      books={this.state.books} deleteBookState={this.deleteBookState}
+      changeWithInputState={this.changeWithInputState} />
 
 
     return (
@@ -54,16 +54,16 @@ class Main extends Component {
         <div className="nav-bar">
           <ul>
             <li>
-              <a href="/">Home</a>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <a href="/new-book">New Book</a>
+              <NavLink to="/new-book">New Book</NavLink>
             </li>
           </ul>
         </div>
         <Routes>
-          <Route path="/" element={<h1>Home</h1>}></Route>
-          <Route path="/new-book" element={<h1>New Book</h1>}></Route>
+          <Route path="/" element={books}></Route>
+          <Route path="/new-book" element={<NewBook/>}></Route>
         </Routes>
       </div>
     );
