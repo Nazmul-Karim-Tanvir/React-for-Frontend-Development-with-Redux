@@ -17,14 +17,14 @@ class Main extends Component {
     console.log(bookId);
     const book = this.state.books.filter((book) => book.id === bookId)[0];
     this.setState({
-      selectedBook:book,
+      selectedBook: book,
     });
   };
   render() {
 
 
     const books = <BookList
-      books={this.state.books}  selectedBookHandler={this.selectedBookHandler}/>
+      books={this.state.books} selectedBookHandler={this.selectedBookHandler} />
 
 
     return (
@@ -42,8 +42,8 @@ class Main extends Component {
         <Routes>
           <Route path="/" element={books}></Route>
           <Route path="/new-book" element={<NewBook />}></Route>
+          <Route path="/:id" element={<BookDetail book={this.state.selectedBook} />}> </Route>
         </Routes>
-        <BookDetail book={this.state.selectedBook}/>
       </div>
     );
   }
