@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardBody, CardImg, CardText, CardTitle } from 'reactstrap';
+import LoadComments from './LoadComments';
 
 const DishDetail = ({ dish }) => {
   return (
@@ -14,7 +15,7 @@ const DishDetail = ({ dish }) => {
           top
           width='100%'
         />
-        <CardBody style={{textAlign:'left'}}>
+        <CardBody style={{ textAlign: 'left' }}>
 
           <CardTitle tag="h5">{dish.name}</CardTitle>
           <CardText>
@@ -23,6 +24,8 @@ const DishDetail = ({ dish }) => {
           <CardText>
             {dish.price}
           </CardText>
+          <hr />
+          <LoadComments comments={dish.comments}></LoadComments>
 
         </CardBody>
 
