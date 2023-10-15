@@ -5,10 +5,17 @@ import DishDetail from './DishDetail';
 
 const Menu = () => {
     const [dishes] = useState(DISHES);
+    const [selectedDish,setSelectedDish] = useState(null);
+    const onSelectDish =(dish) =>{
+        setSelectedDish(dish);
+    }
     const menu = dishes.map((dish) => {
-        return <MenuItem dish={dish} key={dish.id} />;
+        return <MenuItem dish={dish} onSelectDish={onSelectDish} key={dish.id} />;
     });
 
+    
+
+    const dishDetail = selectedDish?<DishDetail dish={selectedDish}/>:null;
     return (
         <div className='container'>
             <div className='row'>
@@ -16,7 +23,7 @@ const Menu = () => {
                     {menu}
                 </div>
                 <div className='col-7'>
-                    <DishDetail/>
+                {dishDetail}
                 </div>
             </div>
         </div>
