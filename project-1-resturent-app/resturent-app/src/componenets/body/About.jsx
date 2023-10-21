@@ -1,11 +1,11 @@
 import React from 'react'
 
-const BodyComponent = () => {
+const About = () => {
   return (
     <div>
-
+      
     </div>
   )
 }
 
-export default BodyComponent
+export default About
