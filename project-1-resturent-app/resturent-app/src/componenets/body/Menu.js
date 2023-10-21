@@ -1,33 +1,65 @@
-import React, { useState } from 'react'
-import MenuItem from './MenuItem'
-import DISHES from '../../data/dishes'
+import React, { Component } from 'react';
+import DISHES from '../../data/dishes.js';
+import MenuItem from './MenuItem';
 import DishDetail from './DishDetail';
+import { CardColumns, Modal, ModalBody, ModalFooter, Button } from 'reactstrap';
 
-const Menu = () => {
-    const [dishes] = useState(DISHES);
-    const [selectedDish,setSelectedDish] = useState(null);
-    const onSelectDish =(dish) =>{
-        setSelectedDish(dish);
+
+class Menu extends Component {
+    state = {
+        dishes: DISHES,
+        selectedDish: null,
+        modalOpen: false
     }
-    const menu = dishes.map((dish) => {
-        return <MenuItem dish={dish} onSelectDish={onSelectDish} key={dish.id} />;
-    });
 
-    
+    onDishSelect = dish => {
+        this.setState({
+            selectedDish: dish,
+            modalOpen: !this.state.modalOpen
+        });
+    }
 
-    const dishDetail = selectedDish?<DishDetail dish={selectedDish}/>:null;
-    return (
-        <div className='container'>
-            <div className='row'>
-                <div className='col-5'>
-                    {menu}
-                </div>
-                <div className='col-7'>
-                {dishDetail}
+    toggleModal = () => {
+        this.setState({
+            modalOpen: !this.state.modalOpen
+        })
+    }
+
+    render() {
+        const menu = this.state.dishes.map(item => {
+            return (
+                <MenuItem
+                    dish={item}
+                    key={item.id}
+                    onSelectDish={() => this.onDishSelect(item)}
+                />
+            );
+        })
+
+        let dishDetail = null;
+        if (this.state.selectedDish != null) {
+            dishDetail = <DishDetail dish={this.state.selectedDish} />
+        }
+        return (
+            <div className="container">
+                <div className="row">
+                    <CardColumns>
+                        {menu}
+                    </CardColumns>
+                    <Modal isOpen={this.state.modalOpen} onClick={this.toggleModal}>
+                        <ModalBody>
+                            {dishDetail}
+                        </ModalBody>
+                        <ModalFooter>
+                            <Button color="secondary" onClick={this.toggleModal}>
+                                Close
+                            </Button>
+                        </ModalFooter>
+                    </Modal>
                 </div>
             </div>
-        </div>
-    )
+        );
+    }
 }
 
 export default Menu;
