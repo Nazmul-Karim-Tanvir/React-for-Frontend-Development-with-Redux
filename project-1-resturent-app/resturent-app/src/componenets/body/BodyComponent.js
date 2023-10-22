@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Navigate, Routes } from 'react-router-dom';
 import Home from './Home';
 import Menu from './Menu';
 import Contact from './Contact';
@@ -10,10 +10,11 @@ const BodyComponent = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/menu" element={<Menu />}/>
-        <Route path="/about" element={<Contact/>}/>
-        <Route path="/contact" element={<About/>}/>
+        <Route path="/home" exact element={<Home/>}/>
+        <Route path="/menu" exact element={<Menu/>}/>
+        <Route path="/about" exact element={<About/>}/>
+        <Route path="/contact" exact element={<Contact/>}/>
+        <Route from="/" element={<Navigate to="/home"/>}/>
       </Routes>
     </div>
   )
