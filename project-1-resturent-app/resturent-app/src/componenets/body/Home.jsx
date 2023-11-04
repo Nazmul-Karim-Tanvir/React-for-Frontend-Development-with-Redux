@@ -1,28 +1,6 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
 
-const mapStateToProps = state => {
- // console.log("mapStateToProps: ", state);
-  return {
-    dishes: state.dishes,
-    sample: state.sample
-  }
-}
-
-export class Home extends Component {
-  componentDidMount() {
-    console.log("Home Props: ", this.props);
-
-    this.props.dispatch({
-      type: 'TEST',
-      str: "Bohubrihi"
-    })
-
-  }
-
-  componentDidUpdate(){
-    console.log("Home Props Updated: ",this.props)
-  }
+class Home extends Component {
 
   render() {
     document.title = "Home";
@@ -35,4 +13,4 @@ export class Home extends Component {
 
 }
 
-export default connect(mapStateToProps)(Home);
+export default Home;
