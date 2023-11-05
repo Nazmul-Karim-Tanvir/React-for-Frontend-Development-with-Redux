@@ -1,3 +1,4 @@
+import React from "react"
 import BodyComponent from "./body/BodyComponent"
 import FooterComponent from "./footer/FooterComponent"
 import HeaderComponent from "./header/HeaderComponent"
@@ -12,4 +13,4 @@ const MainComponent = () => {
   )
 }
 
-export default MainComponent
+export default MainComponent;
