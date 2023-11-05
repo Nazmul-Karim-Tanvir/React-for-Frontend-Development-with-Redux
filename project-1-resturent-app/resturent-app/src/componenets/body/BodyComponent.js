@@ -10,10 +10,10 @@ const BodyComponent = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" exact element={<Home/>}/>
-        <Route path="/menu" exact element={<Menu/>}/>
-        <Route path="/about" exact element={<About/>}/>
-        <Route path="/contact" exact element={<Contact/>}/>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/menu" element={<Menu/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/contact" element={<Contact/>}/>
       </Routes>
     </div>
   )
