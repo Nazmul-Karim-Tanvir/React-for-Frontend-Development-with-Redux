@@ -1,21 +1,23 @@
 import COMMENTS from '../data/comments';
 import { combineReducers } from 'redux';
+import { InitialContactForm } from './forms';
+import { createForms } from 'react-redux-form';
 import * as actionTypes from './actionTypes';
 
 const dishReducer = (dishState = { isLoading: false, dishes: [] }, action) => {
     switch (action.type) {
         case actionTypes.DISHES_LOADING:
-            return{
+            return {
                 ...dishState,
-                isLoading:true,
-                dishes:[]
+                isLoading: true,
+                dishes: []
             }
-            case actionTypes.LOAD_DISHES:
-                return{
-                    ...dishState,
-                isLoading:false,
-                dishes:action.payload
-                }
+        case actionTypes.LOAD_DISHES:
+            return {
+                ...dishState,
+                isLoading: false,
+                dishes: action.payload
+            }
         default:
             return dishState;
     }
@@ -32,13 +34,14 @@ const commentReducer = (commentState = COMMENTS, action) => {
         default:
             return commentState;
     }
-
-
 }
 
 export const Reducer = combineReducers({
     dishes: dishReducer,
-    comments: commentReducer
+    comments: commentReducer,
+    ...createForms({
+        feedback: InitialContactForm
+    })
 });
 
 
