@@ -1,8 +1,8 @@
 {
   "dishes": [
     {
-      "id": 0,
-      "name": "Burger",
+      "id": 1,
+      "name": "Cheese Cake",
       "price": "199"
     }
   ],
