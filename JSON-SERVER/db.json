@@ -1,17 +1,11 @@
 {
-    "dishes": [
-        {
-            "id": 0,
-            "name":"Burger",
-            "price": "199"
-        }
-        ,
-        {
-            "id": 1,
-            "name":"Cheese Cake",
-            "price": "350"
-        }
-    ],
-    "comments": [],
-    "feedback":[]
+  "dishes": [
+    {
+      "id": 0,
+      "name": "Burger",
+      "price": "199"
+    }
+  ],
+  "comments": [],
+  "feedback": []
 }
