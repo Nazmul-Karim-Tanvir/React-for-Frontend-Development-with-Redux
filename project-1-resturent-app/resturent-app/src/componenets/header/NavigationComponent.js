@@ -9,7 +9,7 @@ const NavigationComponent = () => {
     return (
         <div>
             <Navbar color="dark" dark expand="sm">
-                <NavbarBrand href="/"> Resturent</NavbarBrand>
+                <NavbarBrand href="/">Bohubrihi Resturent</NavbarBrand>
                 <NavbarToggler onClick={navToggle} />
                 <Collapse isOpen={isNavOpen} navbar>
                     <Nav className='me-auto' navbar>
