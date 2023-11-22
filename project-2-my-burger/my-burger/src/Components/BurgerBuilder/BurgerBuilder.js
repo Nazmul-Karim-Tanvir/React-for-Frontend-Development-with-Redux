@@ -4,7 +4,7 @@ import Controls from './Controls/Controls';
 import Summary from './Summary/Summary';
 import { Modal, ModalBody, ModalHeader, ModalFooter, Button } from 'reactstrap';
 import { Navigate } from 'react-router-dom';
-import { Connect, connect } from 'react-redux';
+import {connect } from 'react-redux';
 import { addIngredient, removeIngredient, updatePurchasable } from "../../redux/actionCreators";
 
 const mapStateToProps = state => {
