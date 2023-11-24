@@ -1,9 +1,10 @@
-import *as actionTypes from './actionTypes';
+import * as actionTypes from './actionTypes';
+
 const INGREDIENT_PRICES = {
     salad: 20,
     cheese: 40,
     meat: 90,
-};
+}
 
 const INITIAL_STATE = {
     ingredients: [
@@ -12,11 +13,11 @@ const INITIAL_STATE = {
         { type: 'meat', amount: 0 },
     ],
     orders: [],
-    orderLoading: false,
+    orderLoading: true,
     orderErr: false,
     totalPrice: 80,
     purchasable: false,
-};
+}
 
 export const reducer = (state = INITIAL_STATE, action) => {
     const ingredients = [...state.ingredients];
@@ -31,7 +32,6 @@ export const reducer = (state = INITIAL_STATE, action) => {
                 totalPrice: state.totalPrice + INGREDIENT_PRICES[action.payload],
             }
         case actionTypes.REMOVE_INGREDIENT:
-
             for (let item of ingredients) {
                 if (item.type === action.payload) {
                     if (item.amount <= 0) return state;
@@ -70,14 +70,19 @@ export const reducer = (state = INITIAL_STATE, action) => {
                     id: key,
                 })
             }
-            
             return {
                 ...state,
                 orders: orders,
                 orderLoading: false,
-
+            }
+        case actionTypes.ORDER_LOAD_FAILED:
+            return {
+                ...state,
+                orderErr: true,
+                orderLoading: false,
             }
         default:
             return state;
     }
+
 }
