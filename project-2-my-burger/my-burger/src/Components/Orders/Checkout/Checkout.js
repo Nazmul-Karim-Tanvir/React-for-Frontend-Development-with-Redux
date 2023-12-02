@@ -114,11 +114,15 @@ class Checkout extends Component {
         return (
             <div>
                 {this.state.isLoading ? <Spinner /> : form}
-                <Modal isOpen={this.state.isModalOpen} onClick={this.goBack}>
+                <Modal isOpen={this.state.isModalOpen}>
                     <ModalBody>
                         <p>{this.state.modalMsg}</p>
+                        <Link to="/">
+                            <Button color="secondary" className="ml-1" type="button">Return Home </Button>
+                        </Link>
                     </ModalBody>
                 </Modal>
+
             </div>
         )
     }
