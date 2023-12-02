@@ -6,6 +6,7 @@ import axios from 'axios';
 
 import { connect } from 'react-redux';
 import { resetIngredients } from '../../../redux/actionCreators';
+import { Link } from 'react-router-dom';
 
 const mapStateToProps = state => {
     return {
@@ -35,10 +36,6 @@ class Checkout extends Component {
         modalMsg: "",
     }
 
-    goBack = () => {
-        this.props.history.goBack("/");
-    }
-
     inputChangerHandler = (e) => {
         this.setState({
             values: {
@@ -58,7 +55,7 @@ class Checkout extends Component {
             userId: this.props.userId,
 
         }
-        axios.post("https://burger-builder-96f92-default-rtdb.firebaseio.com/orders.json?auth="+this.props.token, order)
+        axios.post("https://burger-builder-96f92-default-rtdb.firebaseio.com/orders.json?auth=" + this.props.token, order)
             .then(response => {
                 if (response.status === 200) {
                     this.setState({
@@ -108,7 +105,10 @@ class Checkout extends Component {
                 </select>
                 <br />
                 <Button style={{ backgroundColor: "#D70F64" }} className="mr-auto" onClick={this.submitHandler} disabled={!this.props.purchasable}>Place Order</Button>
-                <Button color="secondary" className="ml-1" onClick={this.goBack}>Cancel</Button>
+                <Link to="/">
+                    <Button color="secondary" className="ml-1" type="button">Cancel</Button>
+                </Link>
+
             </form>
         </div>)
         return (
