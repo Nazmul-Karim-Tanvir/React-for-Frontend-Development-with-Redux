@@ -23,7 +23,7 @@ const Header = props => {
         links = (
             <Nav className="mr-md-5">
                 <NavItem>
-                    <NavLink exact to="/login" className="NavLink">Login</NavLink>
+                    <NavLink  to="/login" className="NavLink">Login</NavLink>
                 </NavItem>
             </Nav>
         )
@@ -31,13 +31,13 @@ const Header = props => {
         links = (
             <Nav className="mr-md-5">
                 <NavItem>
-                    <NavLink exact to="/" className="NavLink">Burger Builder</NavLink>
+                    <NavLink  to="/" className="NavLink">Burger Builder</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink exact to="/orders" className="NavLink">Orders</NavLink>
+                    <NavLink  to="/orders" className="NavLink">Orders</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink exact to="/logout" className="NavLink">Logout</NavLink>
+                    <NavLink  to="/logout" className="NavLink">Logout</NavLink>
                 </NavItem>
             </Nav>
         )
