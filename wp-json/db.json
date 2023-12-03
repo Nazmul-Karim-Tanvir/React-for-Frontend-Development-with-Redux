@@ -1,0 +1,82 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Nature",
+      "photos": [
+        {
+          "id": 101,
+          "title": "Sunset at the Beach",
+          "url": "https://example.com/nature/sunset.jpg"
+        },
+        {
+          "id": 102,
+          "title": "Mountain Landscape",
+          "url": "https://example.com/nature/mountain.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Animals",
+      "photos": [
+        {
+          "id": 201,
+          "title": "Cute Cat",
+          "url": "https://example.com/animals/cat.jpg"
+        },
+        {
+          "id": 202,
+          "title": "Wild Tiger",
+          "url": "https://example.com/animals/tiger.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Cityscapes",
+      "photos": [
+        {
+          "id": 301,
+          "title": "City Skyline",
+          "url": "https://example.com/cityscapes/skyline.jpg"
+        },
+        {
+          "id": 302,
+          "title": "Urban Architecture",
+          "url": "https://example.com/cityscapes/architecture.jpg"
+        }
+      ]
+    }
+  ],
+  "feedbacks": [
+    {
+      "id": 1,
+      "category_id": 1,
+      "photo_id": 101,
+      "visitor_name": "Alice",
+      "comment": "Beautiful sunset!"
+    },
+    {
+      "id": 2,
+      "category_id": 2,
+      "photo_id": 201,
+      "visitor_name": "Bob",
+      "comment": "The cat is adorable!"
+    },
+    {
+      "id": 3,
+      "category_id": 3,
+      "photo_id": 301,
+      "visitor_name": "Charlie",
+      "comment": "Love the city skyline!"
+    },
+    {
+      "category_id": 1,
+      "photo_id": 101,
+      "visitor_name": "ertert",
+      "comment": "ertet",
+      "id": 4
+    }
+  ]
+}
