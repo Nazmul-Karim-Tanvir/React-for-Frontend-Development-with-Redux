@@ -11,3 +11,128 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.navbar{
+  display: flex;
+  padding-left: 10px;
+  position: relative;
+  z-index: 1;
+}
+.apk a{
+  text-decoration: none;
+  color: #000;
+  position: absolute;
+  top: 30px;
+  right: 10px;
+}
+.apk a:hover{
+  color: cadetblue;
+}
+.App{
+  max-width: 960px;
+  margin: 0 auto;
+}
+.title,form{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+input{
+  display: none;
+}
+span{
+  color: #fff;
+  background-color:cadetblue;
+  font-size: 24px;
+  border: black 1px solid;
+  border-radius: 100px;
+  padding: 0 7px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+span:hover{
+  background-color: darkslateblue;
+}
+.output{
+  margin-top: 20px;
+}
+.progress-bar{
+  height: 5px;
+  background: palevioletred;
+  margin-top: 20px;
+}
+.img-grid{
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+.img-wrap{
+  overflow: hidden;
+  height: 0;
+  padding: 50% 0;
+  position: relative;
+}
+.img-wrap img{
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 110%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.img-wrap div{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.like{
+  font-size: 25px;
+  margin-right: 5px;
+}
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.backdrop img{
+  display: block;
+  max-width: 60%;
+  max-height: 80%;
+  margin: 60px auto;
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+  border: 3px solid white;
+}
+@media screen and (max-width: 800px) {
+  .img-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  }
+  .backdrop img{
+    max-width: 80%;
+    max-height: 95%;
+    margin: 40px auto;
+  }
+  .title{
+    margin: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .img-grid {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  .backdrop img{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 20px auto;
+  }
+  .title{
+    margin: 20px;
+  }
+}
