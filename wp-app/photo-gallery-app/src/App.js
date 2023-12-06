@@ -34,6 +34,8 @@ function App() {
       .catch(error => {
         console.error('Error submitting feedback:', error);
       });
+
+      
   };
 
   // Function to handle category selection
