@@ -4,7 +4,7 @@ import './styles.css';
 
 function App() {
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   useEffect(() => {
     // Fetch categories from the JSON server
@@ -46,6 +46,12 @@ function App() {
 
   return (
     <div className="App">
+      <h1 style={{
+        backgroundImage: 'linear-gradient(to right, #FF8C00, #FFD700, #FF4500)',
+        WebkitBackgroundClip: 'text',
+        color: 'transparent',
+      }}>Choose Your Favorite Full HD Wallpaper Now</h1>
+
       {/* Dropdown menu for selecting a category */}
       <select onChange={handleCategoryChange} value={selectedCategory}>
         <option value={null}>Select a category</option>
