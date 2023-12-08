@@ -35,7 +35,7 @@ function App() {
         console.error('Error submitting feedback:', error);
       });
 
-      
+
   };
 
   // Function to handle category selection
@@ -62,7 +62,13 @@ function App() {
             .find(category => category.id === selectedCategory)
             .photos.map(photo => (
               <div key={photo.id}>
-                <img src={photo.url} alt={photo.title} style={{ maxWidth: '300px' }} />
+                <img
+                  src={`http://localhost:3000${photo.url}`}
+                  alt={photo.title}
+                  style={{ maxWidth: '300px' }}
+                />
+
+
                 <p>{photo.title}</p>
                 <input type="text" placeholder="Your Name" id={`name-${photo.id}`} />
                 <textarea placeholder="Leave a comment" id={`comment-${photo.id}`} />

@@ -6,13 +6,13 @@
       "photos": [
         {
           "id": 101,
-          "title": "Sunset at the Beach",
-          "url": "https://example.com/nature/sunset.jpg"
+          "title": "Watterfall",
+          "url": "/images/nature3.png"
         },
         {
           "id": 102,
-          "title": "Mountain Landscape",
-          "url": "https://example.com/nature/mountain.jpg"
+          "title": "Sea and Sky",
+          "url": "/images/nature4.png"
         }
       ]
     },
@@ -23,28 +23,28 @@
         {
           "id": 201,
           "title": "Cute Cat",
-          "url": "https://example.com/animals/cat.jpg"
+          "url": "/images/cat3.png"
         },
         {
           "id": 202,
-          "title": "Wild Tiger",
-          "url": "https://example.com/animals/tiger.jpg"
+          "title": "Baby Cat",
+          "url": "/images/cat1.png"
         }
       ]
     },
     {
       "id": 3,
-      "name": "Cityscapes",
+      "name": "Birds",
       "photos": [
         {
           "id": 301,
-          "title": "City Skyline",
-          "url": "https://example.com/cityscapes/skyline.jpg"
+          "title": "Blue Macao",
+          "url": "/images/bird1.png"
         },
         {
           "id": 302,
-          "title": "Urban Architecture",
-          "url": "https://example.com/cityscapes/architecture.jpg"
+          "title": "Amazing Fising Bird",
+          "url": "/images/bird2.png"
         }
       ]
     }
@@ -77,6 +77,13 @@
       "visitor_name": "ertert",
       "comment": "ertet",
       "id": 4
+    },
+    {
+      "category_id": 3,
+      "photo_id": 301,
+      "visitor_name": "wow ",
+      "comment": "so blue",
+      "id": 5
     }
   ]
 }
