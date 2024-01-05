@@ -1,19 +1,47 @@
 import React from 'react';
 import img1 from '../../images/img1.png';
 import img2 from '../../images/img2.png';
-
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 const Home = () => {
+  const containerStyle = {
+    textAlign: 'center',
+    padding: '20px',
+  };
+
+  const welcomeTextStyle = {
+    marginBottom: '20px',
+  };
+
+  const headingStyle = {
+    fontSize: '2.5em',
+    marginBottom: '10px',
+  };
+
+  const paragraphStyle = {
+    fontSize: '1.2em',
+    color: '#777',
+  };
+
+  const imgStyle = {
+    maxHeight: '400px',
+    margin: '0 auto',
+    borderRadius: '10px',
+  };
+
   return (
-    <div>
-      <h1>Welcome to Sea View Hotel and Resort</h1>
-      <div id="carouselExample" className="carousel slide">
+    <div style={containerStyle}>
+      <div style={welcomeTextStyle}>
+        <h1 style={headingStyle}>Welcome to Sea View Hotel and Resort</h1>
+        <p style={paragraphStyle}>Your perfect getaway destination</p>
+      </div>
+      <div id="carouselExample" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src={img1} className="d-block w-100" alt="..." />
+            <img src={img1} style={imgStyle} alt="Sea View Hotel" />
           </div>
           <div className="carousel-item">
-            <img src={img2} className="d-block w-100" alt="..." />
+            <img src={img2} style={imgStyle} alt="Sea View Hotel" />
           </div>
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
