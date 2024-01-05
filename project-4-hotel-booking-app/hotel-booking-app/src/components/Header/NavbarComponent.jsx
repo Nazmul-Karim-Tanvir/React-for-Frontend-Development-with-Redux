@@ -15,7 +15,7 @@ const NavbarComponent = () => {
         <div className="container-fluid">
 
           <Link className="navbar-brand" to="/">
-            <span className="text-light">Sea Pearl Hotel</span>
+            <span className="text-light">Sea View Hotel</span>
           </Link>
 
           <button className="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"

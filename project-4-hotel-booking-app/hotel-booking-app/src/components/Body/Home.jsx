@@ -24,7 +24,7 @@ const Home = () => {
   };
 
   const imgStyle = {
-    maxHeight: '400px',
+    maxHeight: '600px',
     margin: '0 auto',
     borderRadius: '10px',
   };
