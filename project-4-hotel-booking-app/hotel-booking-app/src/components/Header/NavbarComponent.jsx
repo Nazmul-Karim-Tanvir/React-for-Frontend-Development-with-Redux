@@ -34,7 +34,7 @@ const NavbarComponent = () => {
                 <Link className="nav-link text-white rounded m-1" to="/about">About</Link>
               </li>
               <li className={`nav-item ${location.pathname === '/rooms' ? 'active' : ''}`}>
-                <Link className="nav-link text-white rounded m-1" to="/rooms">Rooms</Link>
+                <Link className="nav-link text-white rounded m-1" to="/rooms">Rooms and Suits</Link>
               </li>
               <li className={`nav-item ${location.pathname === '/contact' ? 'active' : ''}`}>
                 <Link className="nav-link text-white rounded m-1" to="/contact">Contact</Link>

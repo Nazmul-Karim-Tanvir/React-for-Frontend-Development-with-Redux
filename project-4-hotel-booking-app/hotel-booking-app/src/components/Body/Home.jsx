@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { ref, getDownloadURL } from 'firebase/storage';
-import { storage } from '../Firebase/Firebase'; 
+import { storage } from '../Firebase/Firebase';
 
 const Home = () => {
   // State to store image URLs
@@ -12,11 +12,15 @@ const Home = () => {
     const loadImages = async () => {
       try {
         const image1Ref = ref(storage, 'HomePageImages/homeImage1.png');
-        const image2Ref = ref(storage, 'HomePageImages/homeImage2.png'); // Update with your actual file path
+        const image2Ref = ref(storage, 'HomePageImages/homeImage2.png');
+        const image3Ref = ref(storage, 'HomePageImages/homeImage3.png');
+        const image4Ref = ref(storage, 'HomePageImages/homeImage4.png');
         const url1 = await getDownloadURL(image1Ref);
         const url2 = await getDownloadURL(image2Ref);
+        const url3 = await getDownloadURL(image3Ref);
+        const url4 = await getDownloadURL(image4Ref);
 
-        setImageUrls([url1, url2]);
+        setImageUrls([url1, url2, url3, url4]);
       } catch (error) {
         console.error("Error fetching images:", error);
       }
@@ -26,13 +30,20 @@ const Home = () => {
   }, []);
 
   const containerStyle = {
+    background: "#FAFBFF",
     textAlign: 'center',
     padding: '20px',
   };
 
   const welcomeTextStyle = {
     marginBottom: '20px',
+    background: 'linear-gradient(45deg, #ff0000, #ff9900, #ffcc00, #33cc33, #3399ff, #9900cc)', // You can customize these color stops
+    WebkitBackgroundClip: 'text',
+    color: 'transparent',
+    fontFamily: 'YourFontFamily, sans-serif',
   };
+
+
 
   const headingStyle = {
     fontSize: '2.5em',
@@ -45,7 +56,7 @@ const Home = () => {
   };
 
   const imgStyle = {
-    maxHeight: '600px',
+    maxHeight: '650px',
     margin: '0 auto',
     borderRadius: '10px',
   };
@@ -55,6 +66,7 @@ const Home = () => {
       <div style={welcomeTextStyle}>
         <h1 style={headingStyle}>Welcome to Sea View Hotel and Resort</h1>
         <p style={paragraphStyle}>Your perfect getaway destination</p>
+        <button className='btn btn-success'> Book Now</button>
       </div>
       <div id="carouselExample" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div className="carousel-inner">
@@ -73,6 +85,51 @@ const Home = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
+      <div>
+        <div className='row'>
+          <div className='col-md-3'>
+            <div className="card m-auto mt-4 shadow" style={{ width: '18rem' }}>
+              {imageUrls.length > 0 && <img src={imageUrls[0]} className="card-img-top" alt="Card image cap" />}
+              <div className="card-body">
+                <h5 className="card-title">Largest Motel</h5>
+                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" className="btn btn-primary">Packages</a>
+              </div>
+            </div>
+          </div>
+          <div className='col-md-3'>
+            <div className="card m-auto mt-4 shadow" style={{ width: '18rem' }}>
+              {imageUrls.length > 0 && <img src={imageUrls[1]} className="card-img-top" alt="Card image cap" />}
+              <div className="card-body">
+                <h5 className="card-title"> Family Pool</h5>
+                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" className="btn btn-primary">Packages</a>
+              </div>
+            </div>
+          </div>
+          <div className='col-md-3'>
+            <div className="card m-auto mt-4 shadow" style={{ width: '18rem' }}>
+              {imageUrls.length > 0 && <img src={imageUrls[2]} className="card-img-top" alt="Card image cap" />}
+              <div className="card-body">
+                <h5 className="card-title">Infinity Pool</h5>
+                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" className="btn btn-primary">Packages</a>
+              </div>
+            </div>
+          </div>
+          <div className='col-md-3'>
+            <div className="card m-auto mt-4 shadow" style={{ width: '18rem' }}>
+              {imageUrls.length > 0 && <img src={imageUrls[3]} className="card-img-top" alt="Card image cap" />}
+              <div className="card-body">
+                <h5 className="card-title">Ocean Touch Pool</h5>
+                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" className="btn btn-primary">Packages</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
