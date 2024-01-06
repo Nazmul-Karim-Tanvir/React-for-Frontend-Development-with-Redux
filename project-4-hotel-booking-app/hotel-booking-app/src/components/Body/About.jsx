@@ -3,7 +3,8 @@ import { Card, Container, Row, Col } from 'react-bootstrap';
 
 const About = () => {
   return (
-    <Container>
+    <Container style={{ marginBottom: '100px' }}>
+      <h2 className="text-center mt-4 mb-5">About Us</h2>
       <h2 className="text-center mt-4 mb-5">Welcome to Our Luxurious Sea View Infinity Pool Hotel</h2>
 
       <Row className="mb-4">
