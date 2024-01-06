@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ref, getDownloadURL } from 'firebase/storage';
 import { storage } from '../Firebase/Firebase';
+import { Link } from 'react-router-dom';
+
 
 const Home = () => {
   // State to store image URLs
@@ -66,7 +68,14 @@ const Home = () => {
       <div style={welcomeTextStyle}>
         <h1 style={headingStyle}>Welcome to Sea View Hotel and Resort</h1>
         <p style={paragraphStyle}>Your perfect getaway destination</p>
-        <button className='btn btn-success'> Book Now</button>
+        <Link to="/rooms" className="btn btn-success ">
+          Book Now
+        </Link>
+
+        <Link to="/rooms" className="btn btn-primary ">
+          Help Line
+        </Link>
+
       </div>
       <div id="carouselExample" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div className="carousel-inner">
@@ -93,7 +102,7 @@ const Home = () => {
               <div className="card-body">
                 <h5 className="card-title">Largest Motel</h5>
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" className="btn btn-primary">Packages</a>
+                <Link to="/rooms " className="btn btn-primary"> Packages</Link>
               </div>
             </div>
           </div>
@@ -103,7 +112,7 @@ const Home = () => {
               <div className="card-body">
                 <h5 className="card-title"> Family Pool</h5>
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" className="btn btn-primary">Packages</a>
+                <Link to="/rooms " className="btn btn-primary"> Packages</Link>
               </div>
             </div>
           </div>
@@ -113,7 +122,7 @@ const Home = () => {
               <div className="card-body">
                 <h5 className="card-title">Infinity Pool</h5>
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" className="btn btn-primary">Packages</a>
+                <Link to="/rooms " className="btn btn-primary"> Packages</Link>
               </div>
             </div>
           </div>
@@ -123,7 +132,7 @@ const Home = () => {
               <div className="card-body">
                 <h5 className="card-title">Ocean Touch Pool</h5>
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" className="btn btn-primary">Packages</a>
+                <Link to="/rooms " className="btn btn-primary"> Packages</Link>
               </div>
             </div>
           </div>
