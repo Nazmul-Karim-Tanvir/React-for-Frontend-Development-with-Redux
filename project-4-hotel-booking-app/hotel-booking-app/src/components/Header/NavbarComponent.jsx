@@ -41,6 +41,12 @@ const NavbarComponent = () => {
               </li>
             </ul>
 
+            <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
+              <li className={`nav-item ${location.pathname === '/register' ? 'active' : ''}`}>
+                <Link className="btn btn-success text-white rounded m-1" to="/register">Register/Login</Link>
+              </li>
+            </ul>
+
           </div>
         </div>
       </nav>

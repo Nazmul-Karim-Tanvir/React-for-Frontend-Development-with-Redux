@@ -8,6 +8,7 @@ import NavbarComponent from './components/Header/NavbarComponent';
 import About from './components/Body/About';
 import Rooms from './components/Body/Rooms';
 import Contacts from './components/Body/Contacts';
+import Register from './components/Authentication/Register';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/rooms" element={<Rooms />} />
           <Route path="/contact" element={<Contacts />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
         <FooterComponent />
       </div>
