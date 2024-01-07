@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
 const NavbarComponent = () => {
   const navbarStyle = {
@@ -8,6 +9,26 @@ const NavbarComponent = () => {
   };
 
   const location = useLocation();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const auth = getAuth();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setIsLoggedIn(!!user);
+    });
+
+    return () => unsubscribe();
+  }, [auth]);
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      alert('Logged out successfully');
+    } catch (error) {
+      console.error('Failed to log out', error);
+    }
+  };
 
   return (
     <div>
@@ -26,7 +47,7 @@ const NavbarComponent = () => {
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}>
                 <Link className="nav-link text-white rounded m-1" to="/">Home</Link>
               </li>
@@ -42,9 +63,17 @@ const NavbarComponent = () => {
             </ul>
 
             <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
-              <li className={`nav-item ${location.pathname === '/register' ? 'active' : ''}`}>
-                <Link className="btn btn-success text-white rounded m-1" to="/register">Register/Login</Link>
-              </li>
+              {isLoggedIn ? (
+                <li>
+                  <button className="btn btn-danger text-white rounded m-1" onClick={handleLogout}>
+                    Logout
+                  </button>
+                </li>
+              ) : (
+                <li className={`nav-item ${location.pathname === '/register' ? 'active' : ''}`}>
+                  <Link className="btn btn-success text-white rounded m-1" to="/register">Register/Login</Link>
+                </li>
+              )}
             </ul>
 
           </div>

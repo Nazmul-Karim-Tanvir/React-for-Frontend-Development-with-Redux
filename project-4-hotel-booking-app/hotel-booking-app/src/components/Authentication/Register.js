@@ -48,56 +48,54 @@ const Register = () => {
 
   if (isLoggedIn) {
     return (
-      <div className="container mt-5 my-5 card shadow">
+      <div className="container mt-5 my-5 p-4 card shadow">
         <div className="col-md-6 offset-md-3">
-          <button className="btn btn-danger" onClick={handleLogout}>
-            Logout
-          </button>
           <div className="mt-3">
-            <Link to="/rooms">Go to Rooms</Link>
+            <Link className='btn btn-success' to="/rooms">Go to Rooms</Link>
           </div>
         </div>
       </div>
     );
   }
+  
 
   return (
     <div className="container mt-5 my-5 card shadow">
-    <div className="col-md-6 offset-md-3">
-      <h2 className="mb-4">{isLogin ? 'Log In' : 'Register Now'}</h2>
-      <div className="mb-3">
-        {error && <div className="alert alert-danger">{error}</div>}
-      </div>
-      {/* Login/Register Form */}
-      <div className="mb-3">
-        <label className="form-label">Email:</label>
-        <input type="email" placeholder='type email' className="form-control shadow" value={email} onChange={(e) => setEmail(e.target.value)} />
-      </div>
-      <div className="mb-3">
-        <label className="form-label">Password:</label>
-        <input type="password" placeholder='password..' className="form-control shadow" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </div>
-      {!isLogin && (
+      <div className="col-md-6 offset-md-3">
+        <h2 className="mb-4">{isLogin ? 'Log In' : 'Register Now'}</h2>
         <div className="mb-3">
-          <label className="form-label">Confirm Password:</label>
-          <input type="password" placeholder='confirm pass..' className="form-control shadow" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+          {error && <div className="alert alert-danger">{error}</div>}
         </div>
-      )}
-      <button className="btn btn-primary" onClick={handleAuthAction}>
-        {isLogin ? 'Log In' : 'Register'}
-      </button>
-      <div className="text-center mt-3">
-        <p>{isLogin ? "Don't have an account? " : "Already have an account? "}
-          <span
-            style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
-            onClick={() => setIsLogin(!isLogin)}
-          >
-            {isLogin ? 'Register' : 'Log In'}
-          </span>
-        </p>
+        {/* Login/Register Form */}
+        <div className="mb-3">
+          <label className="form-label">Email:</label>
+          <input type="email" placeholder='type email' className="form-control shadow" value={email} onChange={(e) => setEmail(e.target.value)} />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Password:</label>
+          <input type="password" placeholder='password..' className="form-control shadow" value={password} onChange={(e) => setPassword(e.target.value)} />
+        </div>
+        {!isLogin && (
+          <div className="mb-3">
+            <label className="form-label">Confirm Password:</label>
+            <input type="password" placeholder='confirm pass..' className="form-control shadow" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+          </div>
+        )}
+        <button className="btn btn-primary" onClick={handleAuthAction}>
+          {isLogin ? 'Log In' : 'Register'}
+        </button>
+        <div className="text-center mt-3">
+          <p>{isLogin ? "Don't have an account? " : "Already have an account? "}
+            <span
+              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
+              onClick={() => setIsLogin(!isLogin)}
+            >
+              {isLogin ? 'Register' : 'Log In'}
+            </span>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
   );
 }
 
