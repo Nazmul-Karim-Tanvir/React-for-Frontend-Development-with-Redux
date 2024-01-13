@@ -9,7 +9,7 @@ import About from './components/Body/About';
 import Rooms from './components/Body/Rooms';
 import Contacts from './components/Body/Contacts';
 import Register from './components/Authentication/Register';
-
+import BookedRooms from './components/Booking/BookedRooms';
 function App() {
   return (
     <Router>
@@ -21,6 +21,7 @@ function App() {
           <Route path="/rooms" element={<Rooms />} />
           <Route path="/contact" element={<Contacts />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/booked-rooms" element={<BookedRooms />} />
         </Routes>
         <FooterComponent />
       </div>

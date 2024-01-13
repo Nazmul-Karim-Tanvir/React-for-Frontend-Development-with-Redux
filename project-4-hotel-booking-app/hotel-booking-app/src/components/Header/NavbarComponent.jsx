@@ -4,7 +4,7 @@ import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
 const NavbarComponent = () => {
   const navbarStyle = {
-    background: 'linear-gradient(to right, #9d00ff, #00b7ff)',
+    background: '#4486F4',
     boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
   };
 
