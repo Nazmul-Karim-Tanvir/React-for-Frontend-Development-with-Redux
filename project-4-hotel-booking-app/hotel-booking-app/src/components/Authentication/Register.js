@@ -52,6 +52,7 @@ const Register = () => {
         <div className="col-md-6 offset-md-3">
           <div className="mt-3">
             <Link className='btn btn-success' to="/rooms">Go to Rooms</Link>
+            <Link className='btn btn-warning' to="/booked-rooms">BookedRooms</Link>
           </div>
         </div>
       </div>

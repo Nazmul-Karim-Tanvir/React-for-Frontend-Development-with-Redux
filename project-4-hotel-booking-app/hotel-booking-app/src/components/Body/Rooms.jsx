@@ -45,7 +45,7 @@ const Rooms = () => {
             <div className="card-body">
               <h5 className="card-title">Double Bed</h5>
               <p className="card-text">Ultimate Luxury and Convenience: Enjoy 24/7 AC Service with Television and High-Speed WiFi</p>
-              <a href="#" className="btn btn-primary">Book Now</a>
+              <a href="#" className="btn btn-dark">Book Now</a>
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@ const Rooms = () => {
             <div className="card-body">
               <h5 className="card-title"> Tripple Bed</h5>
               <p className="card-text">Ultimate Luxury and Convenience: Enjoy 24/7 AC Service with Television and High-Speed WiFi</p>
-              <a href="#" className="btn btn-primary">Book Now</a>
+              <a href="#" className="btn btn-dark">Book Now</a>
             </div>
           </div>
         </div>
@@ -65,7 +65,7 @@ const Rooms = () => {
             <div className="card-body">
               <h5 className="card-title">Single Bed Premium</h5>
               <p className="card-text">Ultimate Luxury and Convenience: Enjoy 24/7 AC Service with Television and High-Speed WiFi</p>
-              <a href="#" className="btn btn-primary">Book Now</a>
+              <a href="#" className="btn btn-dark">Book Now</a>
             </div>
           </div>
         </div>
@@ -75,7 +75,7 @@ const Rooms = () => {
             <div className="card-body">
               <h5 className="card-title">Single Bed</h5>
               <p className="card-text">Ultimate Luxury and Convenience: Enjoy 24/7 AC Service with Television and High-Speed WiFi</p>
-              <a href="#" className="btn btn-primary">Book Now</a>
+              <a href="#" className="btn btn-dark">Book Now</a>
             </div>
           </div>
         </div>
