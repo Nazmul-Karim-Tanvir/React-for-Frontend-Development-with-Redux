@@ -66,12 +66,12 @@ const NavbarComponent = () => {
               {isLoggedIn ? (
                 <li>
                   <button className="btn btn-danger text-white rounded m-1" onClick={handleLogout}>
-                    Logout
+                    Log Out
                   </button>
                 </li>
               ) : (
                 <li className={`nav-item ${location.pathname === '/register' ? 'active' : ''}`}>
-                  <Link className="btn btn-success text-white rounded m-1" to="/register">Register/Login</Link>
+                  <Link className="btn btn-success text-white rounded m-1" to="/register">Log In</Link>
                 </li>
               )}
             </ul>

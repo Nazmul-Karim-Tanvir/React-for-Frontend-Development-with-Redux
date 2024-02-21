@@ -68,7 +68,7 @@ const Home = () => {
       <div style={welcomeTextStyle}>
         <h1 style={headingStyle}>Welcome to Sea View Hotel and Resort</h1>
         <p style={paragraphStyle}>Your perfect getaway destination</p>
-        <Link to="/rooms" className="btn btn-success ">
+        <Link to="/rooms" className="btn btn-dark ">
           Book Now
         </Link>
 
@@ -98,7 +98,7 @@ const Home = () => {
               <div className="card-body">
                 <h5 className="card-title">Largest Motel</h5>
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <Link to="/rooms " className="btn btn-primary"> Packages</Link>
+                <Link to="/rooms " className="btn btn-dark"> Packages</Link>
               </div>
             </div>
           </div>
@@ -108,7 +108,7 @@ const Home = () => {
               <div className="card-body">
                 <h5 className="card-title"> Family Pool</h5>
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <Link to="/rooms " className="btn btn-primary"> Packages</Link>
+                <Link to="/rooms " className="btn btn-dark"> Packages</Link>
               </div>
             </div>
           </div>
@@ -118,7 +118,7 @@ const Home = () => {
               <div className="card-body">
                 <h5 className="card-title">Infinity Pool</h5>
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <Link to="/rooms " className="btn btn-primary"> Packages</Link>
+                <Link to="/rooms " className="btn btn-dark"> Packages</Link>
               </div>
             </div>
           </div>
@@ -128,7 +128,7 @@ const Home = () => {
               <div className="card-body">
                 <h5 className="card-title">Ocean Touch Pool</h5>
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <Link to="/rooms " className="btn btn-primary"> Packages</Link>
+                <Link to="/rooms " className="btn btn-dark"> Packages</Link>
               </div>
             </div>
           </div>
