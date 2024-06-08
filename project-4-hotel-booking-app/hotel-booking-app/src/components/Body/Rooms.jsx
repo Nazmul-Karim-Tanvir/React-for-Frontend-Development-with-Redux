@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ref, getDownloadURL } from 'firebase/storage';
 import { storage } from '../Firebase/Firebase';
+import BookedRooms from '../Booking/BookedRooms';
 
 const Rooms = () => {
   const [imageUrls, setImageUrls] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     // Function to load images
@@ -36,6 +38,11 @@ const Rooms = () => {
     loadImages();
   }, []);
 
+  // Function to toggle modal visibility
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
     <div>
       <div className='row'>
@@ -45,30 +52,36 @@ const Rooms = () => {
             <div className="card-body">
               <h5 className="card-title">Double Bed</h5>
               <p className="card-text">Ultimate Luxury and Convenience: Enjoy 24/7 AC Service with Television and High-Speed WiFi</p>
-              <p className='rounded display-6 ' style={{color: "#FFC107", fontFamily: "serif"}}> 4000 Taka</p>
-              <a href="#" className="btn btn-dark">Book Now</a>
+              <p className='rounded display-6 ' style={{ color: "#FFC107", fontFamily: "serif" }}> 4000 Taka</p>
+              <button type="button" className="btn btn-dark" onClick={toggleModal}>
+                Book Now
+              </button>
+              <hr/>
               
+
             </div>
           </div>
         </div>
+        {showModal && <BookedRooms closeModal={() => setShowModal(false)} />}
         <div className='col-md-3'>
           <div className="card m-auto mt-4 shadow" style={{ width: '18rem' }}>
             {imageUrls.length > 0 && <img src={imageUrls[1]} className="card-img-top" alt="Card image cap" />}
             <div className="card-body">
               <h5 className="card-title"> Tripple Bed</h5>
               <p className="card-text">Ultimate Luxury and Convenience: Enjoy 24/7 AC Service with Television and High-Speed WiFi</p>
-              <p className='rounded display-6 ' style={{color: "#FFC107", fontFamily: "serif"}}> 6000 Taka</p>
+              <p className='rounded display-6 ' style={{ color: "#FFC107", fontFamily: "serif" }}> 6000 Taka</p>
               <a href="#" className="btn btn-dark">Book Now</a>
             </div>
           </div>
         </div>
+        
         <div className='col-md-3'>
           <div className="card m-auto mt-4 shadow" style={{ width: '18rem' }}>
             {imageUrls.length > 0 && <img src={imageUrls[2]} className="card-img-top" alt="Card image cap" />}
             <div className="card-body">
               <h5 className="card-title">Single Bed Premium</h5>
               <p className="card-text">Ultimate Luxury and Convenience: Enjoy 24/7 AC Service with Television and High-Speed WiFi</p>
-              <p className='rounded display-6 ' style={{color: "#FFC107", fontFamily: "serif"}}> 5000 Taka</p>
+              <p className='rounded display-6 ' style={{ color: "#FFC107", fontFamily: "serif" }}> 5000 Taka</p>
               <a href="#" className="btn btn-dark">Book Now</a>
             </div>
           </div>
@@ -79,7 +92,7 @@ const Rooms = () => {
             <div className="card-body">
               <h5 className="card-title">Single Bed</h5>
               <p className="card-text">Ultimate Luxury and Convenience: Enjoy 24/7 AC Service with Television and High-Speed WiFi</p>
-              <p className='rounded display-6 ' style={{color: "#FFC107", fontFamily: "serif"}}> 3000 Taka</p>
+              <p className='rounded display-6 ' style={{ color: "#FFC107", fontFamily: "serif" }}> 3000 Taka</p>
               <a href="#" className="btn btn-dark">Book Now</a>
             </div>
           </div>
