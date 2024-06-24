@@ -15,26 +15,17 @@
     <script type="text/jsx">
         const app = document.getElementById("app")
 
-        function createTitle(title)  { 
-            if(title) {
-                return title;
-            }
-            else{
-                return "No Title";
-            }
-        }
-
         function Header({title}){
             console.log(title);
             return ( 
-                <h1>{`Cool ${createTitle(title)}`}</h1>
+                <h1>{title ? title : 'Default Title'}</h1>
             );
         }
 
         function HomePage(){
             return (
                 <div>
-                    <Header title="React"/>
+                    <Header title=""/>
                 </div>
             )
         }
